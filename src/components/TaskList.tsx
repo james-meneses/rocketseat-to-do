@@ -15,6 +15,11 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
+    if (newTaskTitle == '') {
+      alert('Inclua o nome da tarefa!')
+      return
+    }
+
     const task = {
       id: Math.floor(Math.random() * 1000000),
       title: newTaskTitle,
